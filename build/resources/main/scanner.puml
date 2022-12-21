@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Main {
++PortScanner
++UserInterface
++HostRepository
+}
+
+class PortScanner {
+}
+
+class UserInterface {
+}
+
+class Host {
+}
+
+class Port {
+}
+
+enum Status {
+OPEN
+CLOSED
+}
+
+class HostRepository {
+-List<Host>
+
+}
+
+Main - PortScanner
+UserInterface - Main
+Main -- HostRepository
+HostRepository *- Host
+
+Host <|-- Port
+Host <|-- Status
+@enduml
