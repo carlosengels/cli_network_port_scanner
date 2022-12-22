@@ -1,14 +1,15 @@
 package org.scanner.port;
 
-import java.net.Inet4Address;
-import java.net.Inet6Address;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Host {
     String name;
     String hostName;
     String ipV4Address;
-    ArrayList<Port> ports = new ArrayList<>();
+    List<Port> ports = new ArrayList<>();
+    LocalDateTime mostRecentScan;
 
     public Host(String name, String hostName, String ipV4Address) {
         this.name = name;
@@ -28,11 +29,31 @@ public class Host {
         return ipV4Address;
     }
 
-//    public Inet6Address getIpV6Address() {
-//        return ipV6Address;
-//    }
-
-    public ArrayList<Port> getPorts() {
+    public List<Port> getPorts() {
         return ports;
+    }
+
+    public LocalDateTime getMostRecentScan() {
+        return mostRecentScan;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setHostName(String hostName) {
+        this.hostName = hostName;
+    }
+
+    public void setIpV4Address(String ipV4Address) {
+        this.ipV4Address = ipV4Address;
+    }
+
+    public void setPorts(List<Port> ports) {
+        this.ports = ports;
+    }
+
+    public void setMostRecentScan(LocalDateTime mostRecentScan) {
+        this.mostRecentScan = mostRecentScan;
     }
 }

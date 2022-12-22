@@ -10,8 +10,8 @@ public class HostRepository {
 
     public HostRepository() {
         //TEST OBJECTS
-        hosts.add(new Host("Test Profile", "https://carlosengels.com/", "127.0.0.1"));
-        hosts.add(new Host("Another test profile", "https://carlosengels.com/", "127.0.0.1"));
+        hosts.add(new Host("Test Profile", "localhost", "127.0.0.1"));
+        hosts.add(new Host("My Website", "https://carlosengels.com/", "104.200.17.209"));
     }
 
     public List<Host> getHosts() {
