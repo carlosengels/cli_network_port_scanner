@@ -5,23 +5,38 @@ import org.scanner.port.Host;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class that interacts manages Hosts and interacts with local JSON files
+ */
 public class HostRepository {
     private List<Host> hosts = new ArrayList<>();
 
     public HostRepository() {
-        //TEST OBJECTS
-        hosts.add(new Host("Test Profile", "localhost", "127.0.0.1"));
-        hosts.add(new Host("My Website", "https://carlosengels.com/", "104.200.17.209"));
+    }
+
+    public void updateHost(Host host) {
+        //look in list if host exists
+        for (int i = 0; i < hosts.size(); i++) {
+            if (!(host.getHostName().equals(hosts.get(i).getHostName()) && host.getName().equals(hosts.get(i).getName()))) {
+                hosts.set(i, host);
+            } else addHost(host);
+            System.out.println("New Host Added");
+        }
+    }
+
+    public void addHost(Host host) {
+        hosts.add(host);
     }
 
     public List<Host> getHosts() {
         return hosts;
     }
 
-    @Override
-    public String toString() {
-        return "HostRepository{" +
-                "hosts=" + hosts +
-                '}';
+    public boolean updateJson() {
+        return false;
+    }
+
+    public List<Host> loadJson() {
+        return new ArrayList<>();
     }
 }

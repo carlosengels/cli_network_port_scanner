@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.HostRepositoryTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-12-22T02:10:17" hostname="DESKTOP-QDVB0F0" time="0.017">
+  <properties/>
+  <testcase name="addHost_validHost_addsNewHost()" classname="unit.HostRepositoryTest" time="0.014"/>
+  <testcase name="updateHost_hostExists_updateHostVariables()" classname="unit.HostRepositoryTest" time="0.003"/>
+  <system-out><![CDATA[New Host Added
+New Host Added
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
