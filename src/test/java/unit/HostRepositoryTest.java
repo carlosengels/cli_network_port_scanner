@@ -36,17 +36,19 @@ public class HostRepositoryTest {
                 "Name variable was not properly updated.");
     }
 
+        //TODO Pick up here to complete JSON implementation
     @Test void updateJson_updatesJsonFile() {
         //GIVEN
-
         //WHEN
+        boolean result = hostRepository.updateJson();
 
         //THEN
+        Assertions.assertTrue(result);
+
     }
 
     @Test void loadJson_loadsCorrectJsonFile() {
         //GIVEN
-
         //WHEN
 
         //THEN

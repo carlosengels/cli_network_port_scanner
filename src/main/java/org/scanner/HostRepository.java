@@ -10,6 +10,7 @@ import java.util.List;
  */
 public class HostRepository {
     private List<Host> hosts = new ArrayList<>();
+    private static final String hostsJson = "profiles.json";
 
     public HostRepository() {
     }
