@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.scanner.HostRepository;
 import org.scanner.port.Host;
 
+import java.util.List;
+
 public class HostRepositoryTest {
     Host localHost = new Host("Test Profile", "localhost", "127.0.0.1");
     Host upDatedLocalHost = new Host("Updated Test Profile", "localhost", "127.0.0.1");
@@ -39,6 +41,8 @@ public class HostRepositoryTest {
         //TODO Pick up here to complete JSON implementation
     @Test void updateJson_updatesJsonFile() {
         //GIVEN
+        hostRepository.addHost(localHost);
+        hostRepository.addHost(remoteHost);
         //WHEN
         boolean result = hostRepository.updateJson();
 
@@ -47,11 +51,15 @@ public class HostRepositoryTest {
 
     }
 
+    //TODO make test more thoughtful
     @Test void loadJson_loadsCorrectJsonFile() {
         //GIVEN
+        hostRepository.addHost(localHost);
+        hostRepository.addHost(remoteHost);
         //WHEN
+        List<Host> result = hostRepository.loadJson();
 
         //THEN
-
+        Assertions.assertEquals(result.size(), hostRepository.getHosts().size());
     }
 }

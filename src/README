@@ -1,0 +1,13 @@
+Written by Carlos Engels (https://github.com/carlosengels)
+
+!!!
+SCANNING HOSTS AND NETWORKS THAT YOU DO NOT OWN, OR HAVE EXPLICIT PERMISSION TO SCAN SO CAN RESULT IN CRIMINAL CHARGES.
+To inform and protect yourself read this article published by Nmap: https://nmap.org/book/legal-issues.html
+!!!
+
+DESCRIPTION:
+This port scanner application was written with love for networks and security.
+
+ROADMAP:
+- Implement JSON output format
+- Make PortScanner multithreaded so it doesn't take hours to fully scan a host with generous timeouts.

@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.Objects;
 
 public class Host {
-    String name;
-    String hostName;
-    String ipV4Address;
-    List<Port> ports = new ArrayList<>();
-    LocalDateTime mostRecentScan;
+    private String name;
+    private String hostName;
+    private String ipV4Address;
+    private List<Port> ports = new ArrayList<>();
+    private String mostRecentScan;
 
     public Host(String name, String hostName, String ipV4Address) {
         this.name = name;
@@ -34,8 +34,11 @@ public class Host {
         return ports;
     }
 
-    public LocalDateTime getMostRecentScan() {
+    public String getMostRecentScan() {
         return mostRecentScan;
+    }
+    public LocalDateTime getMostRecentScanAsLocalDateTime() {
+        return LocalDateTime.parse(mostRecentScan);
     }
 
     public void setName(String name) {
@@ -55,7 +58,18 @@ public class Host {
     }
 
     public void setMostRecentScan(LocalDateTime mostRecentScan) {
-        this.mostRecentScan = mostRecentScan;
+        this.mostRecentScan = mostRecentScan.toString();
+    }
+
+    @Override
+    public String toString() {
+        return "Host{" +
+                "name='" + name + '\'' +
+                ", hostName='" + hostName + '\'' +
+                ", ipV4Address='" + ipV4Address + '\'' +
+                ", ports=" + ports +
+                ", mostRecentScan=" + mostRecentScan +
+                '}';
     }
 
     @Override

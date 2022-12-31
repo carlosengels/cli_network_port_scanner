@@ -40,6 +40,6 @@ public class PortScannerTest {
         portScanner.scanHost(host, validTimeout, validPortRange[0], validPortRange[1]);
 
         //THEN
-        assertEquals(host.getMostRecentScan().getHour(), LocalDateTime.now().getHour());
+        assertEquals(host.getMostRecentScanAsLocalDateTime().getHour(), LocalDateTime.now().getHour());
     }
 }
