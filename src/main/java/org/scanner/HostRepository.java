@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class HostRepository {
     private List<Host> hosts = new ArrayList<>();
-    private static final String HOST_JSON = "src/main/resources/hosts.txt";
+    private static final String HOST_JSON = "src/main/resources/hosts.json";
 
     public HostRepository() {
     }
@@ -47,7 +47,6 @@ public class HostRepository {
      */
     public boolean updateJson() {
         try {
-            //Initializing writer
             BufferedWriter writer = new BufferedWriter(new FileWriter(HOST_JSON));
             String json = new Gson().toJson(hosts);
             writer.write(json);
@@ -60,21 +59,18 @@ public class HostRepository {
     }
 
     /**
-     * Read local JSON file and replaces current host list
+     * Read Hosts JSON file and return it as a List.
      * @return - List of hosts written to local file
      */
     public List<Host> loadJson() {
-        //TODO FIX implementation
-//        try {
-//            BufferedReader reader = new BufferedReader(new FileReader(HOST_JSON));
-//            String json = reader;
-//            Gson gson = new Gson();
-//
-//
-//            return savedHosts;
-//        } catch (IOException e) {
-//            System.out.println("Error reading the local Json file");
-//            return new ArrayList<>();
-//        }
+        Gson gson = new Gson();
+
+        try (Reader reader = new FileReader(HOST_JSON)) {
+            List<Host> hosts = gson.fromJson(reader, new TypeToken<List<Host>>() {}.getType());
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+        System.out.println(hosts.toString());
+        return hosts;
     }
 }

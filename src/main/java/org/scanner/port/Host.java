@@ -10,6 +10,7 @@ public class Host {
     private String hostName;
     private String ipV4Address;
     private List<Port> ports = new ArrayList<>();
+    // Stored default LocalDateTime format as String to facilitate writing to JSON.
     private String mostRecentScan;
 
     public Host(String name, String hostName, String ipV4Address) {
