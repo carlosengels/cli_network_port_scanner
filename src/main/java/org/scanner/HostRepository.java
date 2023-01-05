@@ -3,13 +3,10 @@ package org.scanner;
 import com.google.gson.reflect.TypeToken;
 import org.scanner.port.Host;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 
-import java.lang.reflect.Type;
-import java.time.*;
 import java.io.*;
-import java.time.LocalDateTime;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,28 +14,36 @@ import java.util.List;
  * Class that interacts manages Hosts and interacts with local JSON files
  */
 public class HostRepository {
-    private List<Host> hosts = new ArrayList<>();
+    private List<Host> hosts;
     private static final String HOST_JSON = "src/main/resources/hosts.json";
 
+    /**
+     * No argument constructor that initializes hosts list with available JSON data
+     */
     public HostRepository() {
-    }
-
-    public void updateHost(Host host) {
-        //look in list if host exists
-        for (int i = 0; i < hosts.size(); i++) {
-            if (!(host.getHostName().equals(hosts.get(i).getHostName()) && host.getName().equals(hosts.get(i).getName()))) {
-                hosts.set(i, host);
-            } else addHost(host);
-            System.out.println("New Host Added");
-        }
+        this.hosts = loadJson();
     }
 
     public void addHost(Host host) {
-        hosts.add(host);
+        this.hosts.add(host);
     }
 
     public List<Host> getHosts() {
-        return hosts;
+        return this.hosts;
+    }
+
+    /**
+     * Looks for provided host in current hosts lists and replaces it.
+     * @param host - to be updated or added if non-existent in hosts list.
+     */
+    public void updateHost(Host host) {
+        for (int i = 0; i < hosts.size(); i++) {
+            if (!(host.getHostName().equals(hosts.get(i).getHostName()) && host.getName().equals(hosts.get(i).getName()))) {
+                hosts.set(i, host);
+                System.out.println("Host updated");
+            } else addHost(host);
+            System.out.println("New Host Added");
+        }
     }
 
     /**
@@ -46,6 +51,7 @@ public class HostRepository {
      * @return - True if action was successful
      */
     public boolean updateJson() {
+        //TODO Change to print pretty gson
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(HOST_JSON));
             String json = new Gson().toJson(hosts);
@@ -67,10 +73,11 @@ public class HostRepository {
 
         try (Reader reader = new FileReader(HOST_JSON)) {
             List<Host> hosts = gson.fromJson(reader, new TypeToken<List<Host>>() {}.getType());
+            return hosts;
         } catch (IOException e) {
             System.out.println(e);
         }
-        System.out.println(hosts.toString());
-        return hosts;
+        System.out.println("Json file empty. Returning empty List");
+        return new ArrayList<>();
     }
 }

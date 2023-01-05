@@ -1,0 +1,32 @@
+@startuml
+HostRepository *-- Host
+Host *-- Port
+Port - Status
+
+class PortScanner {
+    - timeout : int
+    - startingPort : int
+    - endingPort : int
+    + scanIP(String) : List<Port>
+    + scanHost(Host)
+}
+
+class HostRepository {
+    - hosts : Lists<Hosts>
+    - HOSTS_JSON : String
+
+    + addHost(Host)
+    + updateHost(Host)
+    + getHosts() : List<Host>
+
+    + updateJson() : boolean
+    + loadJson() : List<Host>
+}
+package port {
+class Host {
+}
+class Port{
+}
+enum Status{}
+}
+@enduml

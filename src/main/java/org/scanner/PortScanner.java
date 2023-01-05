@@ -14,18 +14,20 @@ import java.util.List;
 
 public class PortScanner {
 
+    private int timeout = 200;
+    private int startingPort = 1;
+    //TODO - increase default port once multithreading is implemented
+    private int endingPort = 500;
+
+
     /**
-     *
-     * @param ipV4Address - host to be scanner
-     * @param timeout - timeout for connection in ms
-     * @param start - port number to start scan at
-     * @param end - port number to end scan at
+     * @param ipV4Address - scan the ports of given IP
      * @return a new List of Ports
      */
-    public List<Port> scanIP(String ipV4Address, int timeout, int start, int end) {
-        System.out.printf("Scanning ports %d to %d. Timeout has been set to %dms", start, end, timeout);
+    public List<Port> scanIP(String ipV4Address) {
+        System.out.printf("Scanning ports %d to %d. Timeout has been set to %dms.\n", startingPort, endingPort, timeout);
         List<Port> ports = new ArrayList<>();
-        for (int i = start; i <= end; i++) {
+        for (int i = startingPort; i <= endingPort; i++) {
             //TODO Parse errors to break down different SocketException and IllegalArgument messages
             try {
                 Socket socket = new Socket();
@@ -38,8 +40,8 @@ public class PortScanner {
                 System.out.println(e);
                 ports.add(new Port(i, Status.NA));
             } catch (IOException e) {
-                ports.add(new Port(i, Status.NA));
                 System.out.println(e);
+                ports.add(new Port(i, Status.NA));
             }
         }
         return ports;
@@ -49,8 +51,33 @@ public class PortScanner {
      * Scans the host and updates the host profile with most recent scan
      * @param host - host object to be scanned and updated
      */
-    public void scanHost(Host host, int timeout, int start, int end) {
-        host.setPorts(scanIP(host.getIpV4Address(), timeout, start, end));
+    public void scanHost(Host host) {
+        host.setPorts(scanIP(host.getIpV4Address()));
         host.setMostRecentScan(LocalDateTime.now());
+    }
+
+    /** Getters and Setters */
+    public int getTimeout() {
+        return timeout;
+    }
+
+    public void setTimeout(int timeout) {
+        this.timeout = timeout;
+    }
+
+    public int getStartingPort() {
+        return startingPort;
+    }
+
+    public void setStartingPort(int startingPort) {
+        this.startingPort = startingPort;
+    }
+
+    public int getEndingPort() {
+        return endingPort;
+    }
+
+    public void setEndingPort(int endingPort) {
+        this.endingPort = endingPort;
     }
 }

@@ -12,8 +12,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class PortScannerTest {
 
-    int validTimeout = 1000;
-    int validPortRange[] = {1,500};
 
     @Test
     public void scanIP_localAddress_returnsListOfCorrectSize() {
@@ -21,11 +19,11 @@ public class PortScannerTest {
         PortScanner portScanner = new PortScanner();
 
         //WHEN
-        List<Port> result = portScanner.scanIP("127.0.0.1", validTimeout, validPortRange[0], validPortRange[1]);
+        List<Port> result = portScanner.scanIP("127.0.0.1");
 
         //THEN
         assertNotNull(result);
-        assertEquals(result.size(), (validPortRange[1]),
+        assertEquals(result.size() - 1, (portScanner.getEndingPort() - portScanner.getStartingPort()),
                 "List returned by scanIP() was not the same size as the amount of ports scanned.");
     }
 
@@ -37,7 +35,7 @@ public class PortScannerTest {
 
 
         //WHEN
-        portScanner.scanHost(host, validTimeout, validPortRange[0], validPortRange[1]);
+        portScanner.scanHost(host);
 
         //THEN
         assertEquals(host.getMostRecentScanAsLocalDateTime().getHour(), LocalDateTime.now().getHour());
