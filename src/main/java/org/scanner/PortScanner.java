@@ -16,7 +16,7 @@ public class PortScanner {
 
     private int timeout = 200;
     private int startingPort = 1;
-    //TODO - increase default port once multithreading is implemented
+    //TODO - increase default max port once multithreading is implemented
     private int endingPort = 500;
 
 
@@ -54,6 +54,12 @@ public class PortScanner {
     public void scanHost(Host host) {
         host.setPorts(scanIP(host.getIpV4Address()));
         host.setMostRecentScan(LocalDateTime.now());
+    }
+
+    public void scanAllHosts(List<Host> hosts) {
+        for (int i = 0; i < hosts.size(); i++){
+            hosts.get(i);
+        }
     }
 
     /** Getters and Setters */

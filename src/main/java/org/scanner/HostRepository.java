@@ -3,6 +3,8 @@ package org.scanner;
 import com.google.gson.reflect.TypeToken;
 import org.scanner.port.Host;
 import com.google.gson.Gson;
+import org.scanner.port.Port;
+import org.scanner.port.Status;
 
 
 import java.io.*;
@@ -32,6 +34,11 @@ public class HostRepository {
         return this.hosts;
     }
 
+    //TODO implement
+    public boolean removeHost() {
+        return false;
+    }
+
     /**
      * Looks for provided host in current hosts lists and replaces it.
      * @param host - to be updated or added if non-existent in hosts list.
@@ -43,6 +50,18 @@ public class HostRepository {
                 System.out.println("Host updated");
             } else addHost(host);
             System.out.println("New Host Added");
+        }
+    }
+
+    public void printOpenPorts() {
+        for (Host host : hosts) {
+            System.out.println("Checking open ports for " + host);
+            for (Port port : host.getPorts()) {
+                if (port.getStatus().equals(Status.OPEN)) {
+                    System.out.println("OPEN PORT!");
+                    System.out.println(port);
+                }
+            }
         }
     }
 
