@@ -68,7 +68,6 @@ public class Host {
                 "name='" + name + '\'' +
                 ", hostName='" + hostName + '\'' +
                 ", ipV4Address='" + ipV4Address + '\'' +
-                ", ports=" + ports +
                 ", mostRecentScan=" + mostRecentScan +
                 '}';
     }

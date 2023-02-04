@@ -1,9 +1,6 @@
 package org.scanner;
 
-
 import org.scanner.port.Host;
-import org.scanner.port.Port;
-import org.scanner.port.Status;
 
 import java.util.List;
 import java.util.Scanner;
@@ -16,12 +13,15 @@ public class Main {
         HostRepository hostRepository = new HostRepository();
         PortScanner portScanner = new PortScanner();
 
+        /**
+         * Basic CLI UI to facilitate navigating and using of port scanner.
+         */
         //UI
         System.out.println("Servus! This is the simple Watchtower port scanner.");
         while (runApp) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Select one of the following options:");
-            System.out.println("1 - Add/delete a new host to list\n" +
+            System.out.println("1 - Add a new host to list\n" +
                     "2 - Scan all hosts\n" +
                     "3 - Scan a Host\n" +
                     "4 - Print open ports for all hosts\n" +
@@ -31,18 +31,38 @@ public class Main {
             int mainMenuChoice = scanner.nextInt();
 
             switch (mainMenuChoice) {
-                case 1:
-                    System.out.println("1 - Add/delete a new host to list");
-                case 2:
+                case 1: //TODO implement validating data entry
+                    String name;
+                    String hostname;
+                    String ipV4Address;
+                    System.out.println("1 - Add a new host to list");
+                    System.out.println("What is the hostname (i.e. URL) of the host?");
+                    hostname = scanner.next();
+                    System.out.println("What is the IPv4 Address of the host?");
+                    ipV4Address = scanner.next();
+                    System.out.println("What name do you want to call this host locally?");
+                    name = scanner.next();
+                    hostRepository.addHost(new Host(name, hostname, ipV4Address));
+
+                    System.out.printf("%s: IP: %s Hostname: %s added to local save file.", name, ipV4Address, hostname);
+
+                case 2: //TODO implement wait time so menu stalls until scan is complete
                     System.out.println("2 - Scan all hosts");
                     portScanner.scanAllHosts(hostRepository.getHosts());
                     boolean jsonStatus = hostRepository.updateJson();
                     System.out.println("Scanning of all hosts finished.");
                     System.out.println("Json updated: " + jsonStatus);
                     break;
-                case 3: //TODO Implement
+                case 3:
                     System.out.println("3 - Scan a host");
-                    System.out.println("Feature not yet supported.");
+                    System.out.println("Select which host to scan by it's preceding index number:");
+                    List<Host> currentHosts = hostRepository.getHosts();
+                    for (int i = 0; i < currentHosts.size(); i++) {
+                        System.out.println(i + currentHosts.get(i).toString());
+                    }
+                    int scanSelection = scanner.nextInt();
+                    portScanner.scanHost(currentHosts.get(scanSelection));
+                    System.out.println("Host record has been updated with latest scan result.");
                     break;
                 case 4:
                     System.out.println("4 - Print open ports for all hosts");
@@ -62,8 +82,5 @@ public class Main {
 
             }
         }
-
-//        List<Host> hosts = hostRepository.getHosts();
-
     }
 }

@@ -28,6 +28,7 @@ public class HostRepository {
 
     public void addHost(Host host) {
         this.hosts.add(host);
+        updateJson();
     }
 
     public List<Host> getHosts() {

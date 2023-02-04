@@ -5,15 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="557f1dab-012d-4008-a04f-6b8c25820c94" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/watchtower.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/aws.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/scanner/HostRepository$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/scanner/HostRepository$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/scanner/HostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/scanner/HostRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/scanner/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/scanner/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/HostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/HostRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/PortScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/PortScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/port/Host.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/port/Host.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hosts.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hosts.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unit/HostTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unit/HostTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +63,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="UML Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -76,6 +85,7 @@
     &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/engel/JavaProjects/PortScanner/watchtower&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
