@@ -1,5 +1,6 @@
 package org.scanner;
 
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import org.scanner.port.Host;
 import com.google.gson.Gson;
@@ -35,8 +36,8 @@ public class HostRepository {
         return this.hosts;
     }
 
-    //TODO implement
     public boolean removeHost() {
+        //TODO implement
         return false;
     }
 
@@ -52,6 +53,7 @@ public class HostRepository {
             } else addHost(host);
             System.out.println("New Host Added");
         }
+        updateJson();
     }
 
     public void printOpenPorts() {
@@ -72,10 +74,11 @@ public class HostRepository {
      */
     public boolean updateJson() {
         //TODO Change to print pretty gson
-        try {
-            BufferedWriter writer = new BufferedWriter(new FileWriter(HOST_JSON));
-            String json = new Gson().toJson(hosts);
-            writer.write(json);
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(HOST_JSON))) {
+//            String json = new Gson().toJson(hosts);
+//            writer.write(json);
+            gson.toJson(hosts, writer);
             writer.close();
             return true;
         } catch (IOException e) {
