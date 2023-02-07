@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.scanner.HostRepository;
-import org.scanner.port.Host;
+import org.scanner.hostdata.Host;
 
 import java.util.List;
 

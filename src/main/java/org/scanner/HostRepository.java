@@ -2,10 +2,10 @@ package org.scanner;
 
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import org.scanner.port.Host;
+import org.scanner.hostdata.Host;
 import com.google.gson.Gson;
-import org.scanner.port.Port;
-import org.scanner.port.Status;
+import org.scanner.hostdata.Port;
+import org.scanner.hostdata.Status;
 
 
 import java.io.*;
@@ -66,15 +66,19 @@ public class HostRepository {
         System.out.println("New Host Added");
     }
 
+    public void printOpenPort (Host host) {
+        for (Port port : host.getPorts()) {
+            if (port.getStatus().equals(Status.OPEN)) {
+                System.out.println("OPEN PORT!");
+                System.out.println(port);
+            }
+        }
+    }
+
     public void printOpenPorts() {
         for (Host host : hosts) {
             System.out.println("Checking open ports for " + host);
-            for (Port port : host.getPorts()) {
-                if (port.getStatus().equals(Status.OPEN)) {
-                    System.out.println("OPEN PORT!");
-                    System.out.println(port);
-                }
-            }
+            printOpenPort(host);
         }
     }
 
@@ -115,5 +119,13 @@ public class HostRepository {
         }
         System.out.println("Json file empty. Returning empty List");
         return new ArrayList<>();
+    }
+
+    public List<Host> printHostSelection() {
+        List<Host> currentHosts = getHosts();
+        for (int i = 0; i < currentHosts.size(); i++) {
+            System.out.println(i + " - " + currentHosts.get(i).toString());
+        }
+        return currentHosts;
     }
 }

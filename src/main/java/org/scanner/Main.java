@@ -1,6 +1,7 @@
 package org.scanner;
 
-import org.scanner.port.Host;
+import org.scanner.hostdata.Host;
+import org.scanner.utils.DataEntryValidator;
 
 import java.util.List;
 import java.util.Scanner;
@@ -12,6 +13,7 @@ public class Main {
         //Dependencies
         HostRepository hostRepository = new HostRepository();
         PortScanner portScanner = new PortScanner();
+        List<Host> currentHosts;
 
         /**
          * Basic CLI UI to facilitate navigating and using of port scanner.
@@ -31,7 +33,7 @@ public class Main {
             int mainMenuChoice = scanner.nextInt();
 
             switch (mainMenuChoice) {
-                case 1: //TODO implement validating data entry
+                case 1:
                     String name;
                     String hostname;
                     String ipV4Address;
@@ -40,13 +42,19 @@ public class Main {
                     hostname = scanner.next();
                     System.out.println("What is the IPv4 Address of the host?");
                     ipV4Address = scanner.next();
+                    while (!DataEntryValidator.validateIPv4(ipV4Address)) {
+                        System.out.println("It looks like the IP address you entered is not in an IPv4 format. Try again.");
+                        System.out.println("What is the IPv4 Address of the host?");
+                        ipV4Address = scanner.next();
+                    }
                     System.out.println("What name do you want to call this host locally?");
                     name = scanner.next();
                     hostRepository.addHost(new Host(name, hostname, ipV4Address));
 
                     System.out.printf("%s: IP: %s Hostname: %s added to local save file.", name, ipV4Address, hostname);
-
-                case 2: //TODO implement wait time so menu stalls until scan is complete
+                    System.out.println();
+                    break;
+                case 2:
                     System.out.println("2 - Scan all hosts");
                     portScanner.scanAllHosts(hostRepository.getHosts());
                     boolean jsonStatus = hostRepository.updateJson();
@@ -56,10 +64,7 @@ public class Main {
                 case 3:
                     System.out.println("3 - Scan a host");
                     System.out.println("Select which host to scan by it's preceding index number:");
-                    List<Host> currentHosts = hostRepository.getHosts();
-                    for (int i = 0; i < currentHosts.size(); i++) {
-                        System.out.println(i + currentHosts.get(i).toString());
-                    }
+                    currentHosts = hostRepository.printHostSelection();
                     int scanSelection = scanner.nextInt();
                     portScanner.scanHost(currentHosts.get(scanSelection));
                     System.out.println("Host record has been updated with latest scan result.");
@@ -68,12 +73,15 @@ public class Main {
                     System.out.println("4 - Print open ports for all hosts");
                     hostRepository.printOpenPorts();
                     break;
-                case 5:// TODO Implement
-                    System.out.println("3 - Print open ports for a host");
-                    System.out.println("Feature not yet supported.");
+                case 5:
+                    System.out.println("3 - Print open ports for a specific host");
+                    System.out.println("Select which host to you would like to see the open ports index number:");
+                    currentHosts = hostRepository.printHostSelection();
+                    int printPortSelection = scanner.nextInt();
+                    hostRepository.printOpenPort(currentHosts.get(printPortSelection));
                     break;
                 case 6:  // TODO Implement
-                    System.out.println("6 - Settings/Help");
+                    System.out.println("6 - More Options/Settings/Help");
                     System.out.println("Feature not yet supported.");
                     break;
                 default:

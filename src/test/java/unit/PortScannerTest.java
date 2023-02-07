@@ -2,8 +2,8 @@ package unit;
 
 import org.junit.jupiter.api.Test;
 import org.scanner.PortScanner;
-import org.scanner.port.Host;
-import org.scanner.port.Port;
+import org.scanner.hostdata.Host;
+import org.scanner.hostdata.Port;
 
 import java.time.LocalDateTime;
 import java.util.List;

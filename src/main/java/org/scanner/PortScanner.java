@@ -1,13 +1,14 @@
 package org.scanner;
 
-import org.scanner.port.Host;
-import org.scanner.port.Port;
-import org.scanner.port.Status;
+import org.scanner.hostdata.Host;
+import org.scanner.hostdata.Port;
+import org.scanner.hostdata.Status;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketException;
+import java.net.SocketTimeoutException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,12 +35,9 @@ public class PortScanner {
                 socket.connect(new InetSocketAddress(ipV4Address, i), timeout);
                 socket.close();
                 ports.add(new Port(i, Status.OPEN));
-            } catch (SocketException e) {
+            } catch (SocketException | SocketTimeoutException e) {
                 ports.add(new Port(i, Status.CLOSED));
-            } catch (IllegalArgumentException e) {
-                System.out.println(e);
-                ports.add(new Port(i, Status.NA));
-            } catch (IOException e) {
+            } catch (IllegalArgumentException | IOException e) {
                 System.out.println(e);
                 ports.add(new Port(i, Status.NA));
             }
@@ -57,8 +55,10 @@ public class PortScanner {
     }
 
     public void scanAllHosts(List<Host> hosts) {
+        System.out.printf("Scanning %d hosts. \n", hosts.size());
         for (int i = 0; i < hosts.size(); i++){
-            hosts.get(i);
+            scanHost(hosts.get(i));
+            System.out.printf("Scan of host %s complete. \n", hosts.get(i).getName());
         }
     }
 

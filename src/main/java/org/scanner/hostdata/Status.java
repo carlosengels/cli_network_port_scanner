@@ -1,4 +1,4 @@
-package org.scanner.port;
+package org.scanner.hostdata;
 
 public enum Status {
     OPEN,

@@ -1,4 +1,4 @@
-package org.scanner.port;
+package org.scanner.hostdata;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
