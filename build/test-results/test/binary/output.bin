@@ -1,0 +1,27 @@
+<Written by Carlos Engels (https://github.com/carlosengels)
+
+!!!
+ySCANNING HOSTS AND NETWORKS THAT YOU DO NOT OWN, OR HAVE EXPLICIT PERMISSION TO SCAN SO CAN RESULT IN CRIMINAL CHARGES.
+mTo inform and protect yourself read this article published by Nmap: https://nmap.org/book/legal-issues.html
+!!!
+
+DESCRIPTION:
+yCLI port scanner application that writes the results to a local file in JSON format. The JSON file is also used to keep
+na list of the hosts that you've scanned including IP address, hostnames, profile name and port scan results.
+
+>The main menu allows you to navigate through the options of:
+- Add a new host to list
+- Scan all hosts
+- Scan a Host
+"- Print open ports for all hosts
+- Print open ports for a host
+- More Options/Settings/Help
+- Quit
+
+hThe JSON format of the file allows it to easily interact with other security tools you might be using.
+
+
+ROADMAP:
+h- Make PortScanner multithreaded so it doesn't take hours to fully scan a host with generous timeouts.
+w- Once multithreading is implemented, implement the ability to determine timeouts and port ranges and save those in a
+ local save file

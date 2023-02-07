@@ -49,6 +49,8 @@ public class PortScanner {
      * @param host - host object to be scanned and updated
      */
     public void scanHost(Host host) {
+        System.out.printf("Scanning host %s\n", host.getName());
+        System.out.printf("This could take up to %d seconds. \n", timeout*(endingPort-startingPort));
         host.setPorts(scanIP(host.getIpV4Address()));
         host.setMostRecentScan(LocalDateTime.now());
     }
