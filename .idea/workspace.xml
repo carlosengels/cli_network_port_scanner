@@ -5,31 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="557f1dab-012d-4008-a04f-6b8c25820c94" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/scanner/utils/DataEntryValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/scanner/HostRepository$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/scanner/HostRepository$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/scanner/HostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/scanner/HostRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/scanner/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/scanner/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/scanner/PortScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/scanner/PortScanner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/hosts.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/hosts.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/HostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/HostRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/PortScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/PortScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/port/Host.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/hostdata/Host.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/port/Port.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/hostdata/Port.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/port/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/hostdata/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hosts.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hosts.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unit/HostRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unit/HostRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unit/PortScannerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unit/PortScannerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +78,12 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\engel\JavaProjects\PortScanner\watchtower" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.DataEntryValidatorTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.scanner.Main" />
       <module name="watchtower.main" />
@@ -113,6 +96,29 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="DataEntryValidatorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;unit.DataEntryValidatorTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="HostRepositoryTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -183,29 +189,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PortScannerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;unit.PortScannerTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration default="true" type="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -217,11 +200,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.DataEntryValidatorTest" />
         <item itemvalue="Gradle.HostRepositoryTest" />
         <item itemvalue="Gradle.HostRepositoryTest.addHost_validHost_addsNewHost" />
         <item itemvalue="Gradle.HostRepositoryTest.updateHost_hostExists_updateHostVariables" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.PortScannerTest" />
       </list>
     </recent_temporary>
   </component>

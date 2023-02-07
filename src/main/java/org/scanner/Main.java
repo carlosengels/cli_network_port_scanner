@@ -28,7 +28,7 @@ public class Main {
                     "3 - Scan a Host\n" +
                     "4 - Print open ports for all hosts\n" +
                     "5 - Print open ports for a host\n" +
-                    "6 - Settings/Help\n" +
+                    "6 - More Options/Settings/Help\n" +
                     "7 - Quit");
             int mainMenuChoice = scanner.nextInt();
 
