@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="unit.HostRepositoryTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-07T17:29:03" hostname="DESKTOP-QDVB0F0" time="0.02">
+<testsuite name="unit.HostRepositoryTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2023-02-07T17:35:30" hostname="DESKTOP-QDVB0F0" time="0.038">
   <properties/>
-  <testcase name="updateHost_hostExists_updateHostVariables()" classname="unit.HostRepositoryTest" time="0.02"/>
-  <system-out><![CDATA[Host updated
+  <testcase name="loadJson_loadsCorrectJsonFile()" classname="unit.HostRepositoryTest" time="0.023"/>
+  <testcase name="updateJson_updatesJsonFile()" classname="unit.HostRepositoryTest" time="0.004"/>
+  <testcase name="addHost_validHost_addsNewHost()" classname="unit.HostRepositoryTest" time="0.004"/>
+  <testcase name="updateHost_hostExists_updateHostVariables()" classname="unit.HostRepositoryTest" time="0.003"/>
+  <system-out><![CDATA[Host Test Profile has been removedHost My Website has been removedHost Test Profile has been removedHost My Website has been removedHost Test Profile has been removedHost My Website has been removedHost Test Profile has been removedHost My Website has been removedHost updated
+Host Test Profile has been removedHost not in list and therefore not removed.
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

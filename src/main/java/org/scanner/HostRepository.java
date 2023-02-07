@@ -38,8 +38,15 @@ public class HostRepository {
         return this.hosts;
     }
 
-    public boolean removeHost() {
-        //TODO implement
+    public boolean removeHost(Host host) {
+        for (int i = 0; i < hosts.size(); i++) {
+            if (!(host.getHostName().equals(hosts.get(i).getHostName()) && host.getName().equals(hosts.get(i).getName()))) {
+                hosts.remove(i);
+                System.out.printf("Host %s has been removed", host.getName());
+                return true;
+            }
+        }
+        System.out.println("Host not in list and therefore not removed.");
         return false;
     }
 
