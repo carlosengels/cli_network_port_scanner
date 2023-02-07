@@ -29,7 +29,6 @@ public class PortScanner {
         System.out.printf("Scanning ports %d to %d. Timeout has been set to %dms.\n", startingPort, endingPort, timeout);
         List<Port> ports = new ArrayList<>();
         for (int i = startingPort; i <= endingPort; i++) {
-            //TODO Parse errors to break down different SocketException and IllegalArgument messages
             try {
                 Socket socket = new Socket();
                 socket.connect(new InetSocketAddress(ipV4Address, i), timeout);
