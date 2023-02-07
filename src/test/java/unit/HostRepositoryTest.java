@@ -22,6 +22,8 @@ public class HostRepositoryTest {
         //THEN
         Assertions.assertEquals(2, hostRepository.getHosts().size(), "Adding new hosts did not work as expected");
         Assertions.assertEquals("localhost", hostRepository.getHosts().get(0).getHostName(), "Adding new hosts did not work as expected");
+        hostRepository.removeHost(localHost);
+        hostRepository.removeHost(remoteHost);
     }
 
     @Test

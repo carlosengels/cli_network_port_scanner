@@ -17,13 +17,15 @@ import java.util.List;
  * Class that interacts manages Hosts and interacts with local JSON files
  */
 public class HostRepository {
-    private List<Host> hosts;
+    private List<Host> hosts = new ArrayList<>();
     private static final String HOST_JSON = "src/main/resources/hosts.json";
 
     /**
      * No argument constructor that initializes hosts list with available JSON data
      */
     public HostRepository() {
+        Host testHost = new Host("localhost", "localhost", "127.0.0.1");
+        this.hosts.add(testHost);
         this.hosts = loadJson();
     }
 
@@ -50,10 +52,11 @@ public class HostRepository {
             if (!(host.getHostName().equals(hosts.get(i).getHostName()) && host.getName().equals(hosts.get(i).getName()))) {
                 hosts.set(i, host);
                 System.out.println("Host updated");
-            } else addHost(host);
-            System.out.println("New Host Added");
+                return;
+            }
         }
-        updateJson();
+        addHost(host);
+        System.out.println("New Host Added");
     }
 
     public void printOpenPorts() {
@@ -73,7 +76,6 @@ public class HostRepository {
      * @return - True if action was successful
      */
     public boolean updateJson() {
-        //TODO Change to print pretty gson
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(HOST_JSON))) {
 //            String json = new Gson().toJson(hosts);
@@ -96,6 +98,10 @@ public class HostRepository {
 
         try (Reader reader = new FileReader(HOST_JSON)) {
             List<Host> hosts = gson.fromJson(reader, new TypeToken<List<Host>>() {}.getType());
+            if (hosts == null) {
+                System.out.println("Json file empty. Returning empty List");
+                return new ArrayList<>();
+            }
             return hosts;
         } catch (IOException e) {
             System.out.println(e);
