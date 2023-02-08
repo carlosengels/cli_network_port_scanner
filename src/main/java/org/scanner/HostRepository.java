@@ -89,8 +89,6 @@ public class HostRepository {
     public boolean updateJson() {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(HOST_JSON))) {
-//            String json = new Gson().toJson(hosts);
-//            writer.write(json);
             gson.toJson(hosts, writer);
             writer.close();
             return true;

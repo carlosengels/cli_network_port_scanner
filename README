@@ -18,7 +18,7 @@ The main menu allows you to navigate through the options of:
 - More Options/Settings/Help
 - Quit
 
-The JSON format of the file allows it to easily interact with other security tools you might be using.
+The JSON format of the file allows it to easily interact with other (security) tools.
 
 ROADMAP:
 - Make PortScanner multithreaded so it doesn't take hours to fully scan a host with generous timeouts.

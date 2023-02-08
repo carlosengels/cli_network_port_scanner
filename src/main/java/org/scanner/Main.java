@@ -2,6 +2,7 @@ package org.scanner;
 
 import org.scanner.hostdata.Host;
 import org.scanner.utils.DataEntryValidator;
+import org.scanner.utils.LocalSettings;
 
 import java.util.List;
 import java.util.Scanner;
@@ -13,6 +14,7 @@ public class Main {
         //Dependencies
         HostRepository hostRepository = new HostRepository();
         PortScanner portScanner = new PortScanner();
+        LocalSettings localSettings = new LocalSettings();
         List<Host> currentHosts;
 
         /**
@@ -23,12 +25,12 @@ public class Main {
         while (runApp) {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Select one of the following options:");
-            System.out.println("1 - Add a new host to list\n" +
+            System.out.println("1 - Add a new host to hosts.json\n" +
                     "2 - Scan all hosts\n" +
                     "3 - Scan a Host\n" +
                     "4 - Print open ports for all hosts\n" +
                     "5 - Print open ports for a host\n" +
-                    "6 - More Options/Settings/Help\n" +
+                    "6 - Settings/Other\n" +
                     "7 - Quit");
             int mainMenuChoice = scanner.nextInt();
 
@@ -37,7 +39,7 @@ public class Main {
                     String name;
                     String hostname;
                     String ipV4Address;
-                    System.out.println("1 - Add a new host to list");
+                    System.out.println("1 - Add a new host to hosts.json");
                     System.out.println("What is the hostname (i.e. URL) of the host?");
                     hostname = scanner.next();
                     System.out.println("What is the IPv4 Address of the host?");
@@ -80,9 +82,9 @@ public class Main {
                     int printPortSelection = scanner.nextInt();
                     hostRepository.printOpenPort(currentHosts.get(printPortSelection));
                     break;
-                case 6:  // TODO Implement
-                    System.out.println("6 - More Options/Settings/Help");
-                    System.out.println("Feature not yet supported.");
+                case 6:
+                    System.out.println("6 - Settings/Other");
+                    localSettings.displaySettingsMenu();
                     break;
                 default:
                     System.out.println("You are exiting the Watchtower port scanner app. Pfiad di!");

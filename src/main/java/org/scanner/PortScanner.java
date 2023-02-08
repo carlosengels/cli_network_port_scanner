@@ -3,6 +3,7 @@ package org.scanner;
 import org.scanner.hostdata.Host;
 import org.scanner.hostdata.Port;
 import org.scanner.hostdata.Status;
+import org.scanner.utils.LocalSettings;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -15,18 +16,22 @@ import java.util.List;
 
 public class PortScanner {
 
-    private int timeout = 200;
-    private int startingPort = 1;
-    //TODO - increase default max port once multithreading is implemented
-    private int endingPort = 500;
+    private int timeout;
+    private int startingPort;
+    private int endingPort;
 
+    private LocalSettings localSettings = new LocalSettings();
+
+    public PortScanner() {
+        reloadSettings();
+    }
 
     /**
      * @param ipV4Address - scan the ports of given IP
      * @return a new List of Ports
      */
     public List<Port> scanIP(String ipV4Address) {
-        System.out.printf("Scanning ports %d to %d. Timeout has been set to %dms.\n", startingPort, endingPort, timeout);
+        System.out.printf("Scanning ports %d to %d. Connection timeout is set to %dms.\n", startingPort, endingPort, timeout);
         List<Port> ports = new ArrayList<>();
         for (int i = startingPort; i <= endingPort; i++) {
             try {
@@ -49,18 +54,30 @@ public class PortScanner {
      * @param host - host object to be scanned and updated
      */
     public void scanHost(Host host) {
+        reloadSettings();
         System.out.printf("Scanning host %s\n", host.getName());
         System.out.printf("This could take up to %d seconds. \n", timeout*(endingPort-startingPort));
         host.setPorts(scanIP(host.getIpV4Address()));
         host.setMostRecentScan(LocalDateTime.now());
     }
 
+    /**
+     * Scan all hosts in the hosts list
+     * @param hosts - List of hosts
+     */
     public void scanAllHosts(List<Host> hosts) {
         System.out.printf("Scanning %d hosts. \n", hosts.size());
         for (int i = 0; i < hosts.size(); i++){
             scanHost(hosts.get(i));
             System.out.printf("Scan of host %s complete. \n", hosts.get(i).getName());
         }
+    }
+
+    public void reloadSettings() {
+        localSettings.loadSettings();
+        this.timeout = localSettings.getCurrentSettings().getTimeout();
+        this.startingPort = localSettings.getCurrentSettings().getStartingPort();
+        this.endingPort = localSettings.getCurrentSettings().getEndingPort();
     }
 
     /** Getters and Setters */
