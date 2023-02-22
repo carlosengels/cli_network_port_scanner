@@ -3,6 +3,7 @@ package org.scanner;
 import org.scanner.hostdata.Host;
 import org.scanner.hostdata.Port;
 import org.scanner.hostdata.Status;
+import org.scanner.utils.BatchPortScanner;
 import org.scanner.utils.LocalSettings;
 
 import java.io.IOException;
@@ -19,6 +20,7 @@ public class PortScanner {
     private int timeout;
     private int startingPort;
     private int endingPort;
+    private int threadCount = 4;
 
     private LocalSettings localSettings = new LocalSettings();
 
@@ -27,24 +29,40 @@ public class PortScanner {
     }
 
     /**
+     * PortScanner implements multithreaded functionality by dividing the scanning range over the specified thread count.
      * @param ipV4Address - scan the ports of given IP
      * @return a new List of Ports
      */
     public List<Port> scanIP(String ipV4Address) {
         System.out.printf("Scanning ports %d to %d. Connection timeout is set to %dms.\n", startingPort, endingPort, timeout);
         List<Port> ports = new ArrayList<>();
-        for (int i = startingPort; i <= endingPort; i++) {
-            try {
-                Socket socket = new Socket();
-                socket.connect(new InetSocketAddress(ipV4Address, i), timeout);
-                socket.close();
-                ports.add(new Port(i, Status.OPEN));
-            } catch (SocketException | SocketTimeoutException e) {
-                ports.add(new Port(i, Status.CLOSED));
-            } catch (IllegalArgumentException | IOException e) {
-                System.out.println(e);
-                ports.add(new Port(i, Status.NA));
-            }
+        int portScanRange = endingPort - startingPort + 1; // +1 range because we scan the last port number inclusively
+
+        List<BatchPortScanner> batchPortScanners = new ArrayList<>();
+        List<Thread> threads = new ArrayList<>();
+
+        //Create threads with a batchPortScanner in a loop
+        int rangePerThread = portScanRange / threadCount;
+        int startingPortForScan = startingPort;
+        for (int i = 0; i < 4; i++) {
+            int threadStartPort = startingPortForScan;
+            int threadEndingPort = startingPortForScan + rangePerThread;
+            BatchPortScanner batchPortScanner = new BatchPortScanner(ipV4Address, timeout, threadStartPort, threadEndingPort);
+            batchPortScanners.add(batchPortScanner);
+            Thread thread = new Thread(batchPortScanner);
+            threads.add(thread);
+            thread.start();
+            startingPortForScan = threadEndingPort;
+        }
+        try {
+            waitForThreadsToComplete(threads);
+        } catch (InterruptedException e) {
+            System.out.println("Issue with scanning port in on of the threads." + e.getMessage());
+        }
+
+        // Merge the port scan results from each BatchPortScanner to the final result
+        for (BatchPortScanner batchPortScanner : batchPortScanners) {
+            ports.addAll(batchPortScanner.getPorts());
         }
         return ports;
     }
@@ -56,7 +74,7 @@ public class PortScanner {
     public void scanHost(Host host) {
         reloadSettings();
         System.out.printf("Scanning host %s\n", host.getName());
-        System.out.printf("This could take up to %d seconds. \n", timeout*(endingPort-startingPort));
+        System.out.printf("This could take up to %d seconds. \n", timeout*(endingPort-startingPort) / threadCount);
         host.setPorts(scanIP(host.getIpV4Address()));
         host.setMostRecentScan(LocalDateTime.now());
     }
@@ -103,5 +121,17 @@ public class PortScanner {
 
     public void setEndingPort(int endingPort) {
         this.endingPort = endingPort;
+    }
+
+    /**
+     * Makes the thread calling this method wait until passed in threads are done executing before proceeding.
+     *
+     * @param threads to wait on
+     * @throws InterruptedException
+     */
+    public static void waitForThreadsToComplete(List<Thread> threads) throws InterruptedException {
+        for (Thread thread : threads) {
+            thread.join();
+        }
     }
 }
