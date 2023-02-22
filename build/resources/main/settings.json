@@ -1,5 +1,5 @@
 {
-  "timeout": 201,
-  "startingPort": 2,
-  "endingPort": 501
+  "timeout": 200,
+  "startingPort": 1,
+  "endingPort": 500
 }

@@ -30,8 +30,9 @@ public class Main {
                     "3 - Scan a Host\n" +
                     "4 - Print open ports for all hosts\n" +
                     "5 - Print open ports for a host\n" +
-                    "6 - Settings/Other\n" +
-                    "7 - Quit");
+                    "6 - Remove a host from the existing host repository\n" +
+                    "7 - Settings/Other\n" +
+                    "8 - Quit");
             int mainMenuChoice = scanner.nextInt();
 
             switch (mainMenuChoice) {
@@ -67,6 +68,10 @@ public class Main {
                     System.out.println("3 - Scan a host");
                     System.out.println("Select which host to scan by it's preceding index number:");
                     currentHosts = hostRepository.printHostSelection();
+                    if (currentHosts.isEmpty()) {
+                        System.out.println("No hosts are currently saved here. Add new hosts through the main menu");
+                        break;
+                    }
                     int scanSelection = scanner.nextInt();
                     portScanner.scanHost(currentHosts.get(scanSelection));
                     System.out.println("Host record has been updated with latest scan result.");
@@ -76,14 +81,20 @@ public class Main {
                     hostRepository.printOpenPorts();
                     break;
                 case 5:
-                    System.out.println("3 - Print open ports for a specific host");
+                    System.out.println("5 - Print open ports for a specific host");
                     System.out.println("Select which host to you would like to see the open ports index number:");
                     currentHosts = hostRepository.printHostSelection();
                     int printPortSelection = scanner.nextInt();
                     hostRepository.printOpenPort(currentHosts.get(printPortSelection));
                     break;
                 case 6:
-                    System.out.println("6 - Settings/Other");
+                    System.out.println("Select which host to remove by it's preceding index number:");
+                    currentHosts = hostRepository.printHostSelection();
+                    int removeHostSelection = scanner.nextInt();
+                    hostRepository.removeHost(currentHosts.get(removeHostSelection));
+                    break;
+                case 7:
+                    System.out.println("7 - Settings/Other");
                     localSettings.displaySettingsMenu();
                     break;
                 default:

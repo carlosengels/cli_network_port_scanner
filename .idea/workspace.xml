@@ -11,33 +11,18 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.4/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/scanner/HostRepository$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/scanner/HostRepository$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/scanner/HostRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/scanner/HostRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/scanner/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/scanner/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/scanner/PortScanner.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/scanner/PortScanner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/org/scanner/utils/LocalSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/org/scanner/utils/LocalSettings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/LocalSettingsTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/LocalSettingsTest.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/default-package.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/CurrentDesign.puml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/hosts.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/hosts.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-LocalSettingsTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/HostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/HostRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/PortScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/PortScanner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/utils/LocalSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/utils/LocalSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/scanner/utils/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/scanner/utils/Settings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hosts.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hosts.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unit/LocalSettingsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unit/LocalSettingsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,19 +80,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultPlantUmlFileTemplate&quot;: &quot;UML Class&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/engel/JavaProjects/PortScanner/watchtower&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultPlantUmlFileTemplate": "UML Class",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "C:/Users/engel/JavaProjects/Cyber/PortScanner/watchtower",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "Errors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\engel\JavaProjects\PortScanner\watchtower" />
@@ -217,14 +202,6 @@
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="aws.lambda" factoryName="Remote">
-      <option name="credentialProviderId" />
-      <option name="regionId" />
-      <option name="functionName" />
-      <option name="input" />
-      <option name="inputIsFile" value="false" />
       <method v="2" />
     </configuration>
     <recent_temporary>

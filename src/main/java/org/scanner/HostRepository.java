@@ -40,9 +40,10 @@ public class HostRepository {
 
     public boolean removeHost(Host host) {
         for (int i = 0; i < hosts.size(); i++) {
-            if (!(host.getHostName().equals(hosts.get(i).getHostName()) && host.getName().equals(hosts.get(i).getName()))) {
+            if ((host.getHostName().equals(hosts.get(i).getHostName()) && host.getName().equals(hosts.get(i).getName()))) {
                 hosts.remove(i);
-                System.out.printf("Host %s has been removed", host.getName());
+                updateJson();
+                System.out.printf("Host %s has been removed.\n", host.getName());
                 return true;
             }
         }

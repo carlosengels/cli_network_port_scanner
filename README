@@ -9,6 +9,10 @@ DESCRIPTION:
 CLI port scanner application that writes the results to a local file in JSON format. The JSON file is also used to keep
 a list of the hosts that you've scanned including IP address, hostnames, profile name and port scan results.
 
+The port scanner determines if a port is open/closed based by attempting to connect and waiting the specified timeout
+period to determine if the port is accessible or not. Longer timeouts will help detect open ports and avoid false negatives
+due to latency but will increase the total scan time.
+
 The main menu allows you to navigate through the options of:
 - Add a new host to list
 - Scan all hosts
@@ -22,5 +26,4 @@ The JSON format of the file allows it to easily interact with other (security) t
 
 ROADMAP:
 - Make PortScanner multithreaded so it doesn't take hours to fully scan a host with generous timeouts.
-- Once multithreading is implemented, implement the ability to determine timeouts and port ranges and save those in a
- local save file
+
