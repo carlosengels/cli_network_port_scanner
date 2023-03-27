@@ -1,29 +1,35 @@
-Written by Carlos Engels (https://github.com/carlosengels)
+# Multithreaded CLI Port Scanner
 
-!!!
-SCANNING HOSTS AND NETWORKS THAT YOU DO NOT OWN, OR HAVE EXPLICIT PERMISSION TO SCAN SO CAN RESULT IN CRIMINAL CHARGES.
-To inform and protect yourself read this article published by Nmap: https://nmap.org/book/legal-issues.html
-!!!
+This is a a CLI tool that for determining the status of the TCP/UDP ports on a given IP address.
 
-DESCRIPTION:
-CLI port scanner application that writes the results to a local file in JSON format. The JSON file is also used to keep
-a list of the hosts that you've scanned including IP address, hostnames, profile name and port scan results.
+The port scanner allows for saving multiple hosts with their scan results in JSON format. Through the menu you can choose to scan indivual hosts or all saved hosts.
 
-The port scanner determines if a port is open/closed based by attempting to connect and waiting the specified timeout
-period to determine if the port is accessible or not. Longer timeouts will help detect open ports and avoid false negatives
-due to latency but will increase the total scan time.
+Additional functionality includes adjusting the port scan range and the conncetion timeouts (longer timeouts can give you more accurate results but will significantly impact the time it takes to scan a host).
 
-The main menu allows you to navigate through the options of:
-- Add a new host to list
-- Scan all hosts
-- Scan a Host
-- Print open ports for all hosts
-- Print open ports for a host
-- More Options/Settings/Help
-- Quit
+## Warning
+Scanning hosts and networks that you do not own or have explicit permission to scan can result in criminal charges.
 
-The JSON format of the file allows it to easily interact with other (security) tools.
+To inform and protect yourself read [this article published by Nmap.](https://nmap.org/book/legal-issues.html)
 
-ROADMAP:
-- Make PortScanner multithreaded so it doesn't take hours to fully scan a host with generous timeouts.
+## Usage
 
+Once you compile and run the java code you will be shown a menu
+
+```
+1 - Add a new host to hosts.json
+2 - Scan all hosts
+3 - Scan a Host
+4 - Print open ports for all hosts
+5 - Print open ports for a host
+6 - Remove a host from the existing host repository
+7 - Settings/Other
+8 - Quit
+```
+Note that when you scan hosts, the results are not immediately printed, but rather saved to the local JSON save file.
+Other than that the menu is pretty much YGWYS. Through the Settings/Other menu you will be able to adjust default scanning settings.
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="unit.PortScannerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2023-02-22T17:41:30" hostname="DESKTOP-QDVB0F0" time="0.963">
+  <properties/>
+  <testcase name="scanIP_localAddress_returnsListOfCorrectSize()" classname="unit.PortScannerTest" time="0.338"/>
+  <testcase name="scanHost_validData_updatesMostRecentScan()" classname="unit.PortScannerTest" time="0.624"/>
+  <system-out><![CDATA[Scanning ports 1 to 500. Connection timeout is set to 200ms.
+Scanning host Test Profile
+This could take up to 99800 seconds. 
+Scanning ports 1 to 500. Connection timeout is set to 200ms.
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
